@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0"><title>Archive-Timeline</title><link rel="stylesheet"href="assets/css/style.css"></head><body><svg width="0"height="0"style="position: absolute;"><filter id="paper-noise"><feTurbulence type="fractalNoise"baseFrequency="0.8"numOctaves="3"stitchTiles="stitch"/><feColorMatrix type="saturate"values="0"/><feComponentTransfer><feFuncR type="linear"slope="3"intercept="-1"/><feFuncG type="linear"slope="3"intercept="-1"/><feFuncB type="linear"slope="3"intercept="-1"/></feComponentTransfer></filter></svg><nav class="paper-nav"><a href="index.html"class="nav-brand">ilylty's Blog</a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-item">HOME</a>
+            <a href="archive.html" class="nav-item">TIMELINE</a> 
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 style="text-align:center; text-transform:uppercase; letter-spacing:4px;">Archives</h1>
+        
+        
+        <div id="timeline-container" class="timeline"></div>
+    </div>
+
+    <script>async function loadTimeline(){const res=await fetch("data/posts.json");let posts=await res.json();const container=document.getElementById("timeline-container");posts.sort((a,b)=>new Date(b.date)-new Date(a.date));const groups={};posts.forEach(post=>{const year=post.date.split("-")[0];groups[year]||(groups[year]=[]),groups[year].push(post)});Object.keys(groups).sort((a,b)=>b-a).forEach(year=>{const yearLabel=document.createElement("div");yearLabel.className="year-label",yearLabel.innerText=year,container.appendChild(yearLabel),groups[year].forEach(post=>{const item=document.createElement("div");item.className="timeline-item",item.innerHTML=`<div class="timeline-date">${post.date}·${post.categories[0]}</div><a href="post.html?path=${encodeURIComponent(post.path)}"class="timeline-link">${post.title}</a>`,container.appendChild(item)})})}loadTimeline();</script></body></html>

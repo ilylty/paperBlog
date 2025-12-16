@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0"><title>ilylty's Blog</title>
+    
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <style>
+        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:30px}.card{background:var(--paper-color);border:3px solid var(--ink-color);box-shadow:6px 6px 0 var(--ink-color);padding:20px;position:relative;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:0.1s;z-index:1}.card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink-color);background:#fff}.card-tag{background:var(--ink-color);color:#fff;padding:2px 6px;font-size:0.7em;margin-right:5px}
+    </style>
+</head>
+<body>
+    
+    <svg width="0" height="0" style="position: absolute; pointer-events: none; z-index: -1;">
+        
+        <filter id="paper-noise" x="0%" y="0%" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="3" intercept="-1" />
+                <feFuncG type="linear" slope="3" intercept="-1" />
+                <feFuncB type="linear" slope="3" intercept="-1" />
+            </feComponentTransfer>
+        </filter>
+    </svg>
+    
+    <nav class="paper-nav">
+        <a href="index.html" class="nav-brand">ilylty's Blog</a><div class="nav-links"><a href="index.html"class="nav-item">HOME</a><a href="archive.html"class="nav-item">TIMELINE</a></div></nav><div class="container"><h1 style="border-bottom: 4px solid var(--ink-color); padding-bottom:10px;">LATEST POSTS</h1><div id="posts-grid"class="grid"></div></div><script>async function loadIndex(){const res=await fetch("data/posts.json"),posts=await res.json(),container=document.getElementById("posts-grid");posts.slice(0,6).forEach(post=>{const card=document.createElement("a");card.href=`post.html?path=${encodeURIComponent(post.path)}`,card.className="card paper-texture";const tags=post.tags.map(t=>`<span class="card-tag">${t}</span>`).join("");card.innerHTML=`\n<div style="font-size:0.8em; color:#666; margin-bottom:10px;">${post.date}</div>\n<h3 style="margin:0 0 10px 0;">${post.title}</h3>\n<p style="font-size:0.9em; flex-grow:1;">${post.summary}</p>\n<div style="margin-top:10px;">${tags}</div>\n`,container.appendChild(card)})}loadIndex();</script></body></html>
