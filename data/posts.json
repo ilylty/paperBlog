@@ -12,5 +12,19 @@
         ],
         "cover_image": "",
         "summary": "详细介绍如何撰写和发布博客文章，包括元数据格式、书签使用及构建流程。"
+    },
+    {
+        "path": "posts/2024/11/11-AntinMusicReversal.md",
+        "date": "2024-11-11",
+        "title": "岸听音乐逆向",
+        "categories": [
+            "Reverse"
+        ],
+        "tags": [
+            "Music",
+            "smali"
+        ],
+        "cover_image": "",
+        "summary": "详细介绍如何逆向分析岸听音乐app，包括搜索关键函数、处理请求头和post参数等。"
     }
 ]
