@@ -14,6 +14,19 @@
         "summary": "详细介绍如何撰写和发布博客文章，包括元数据格式、书签使用及构建流程。"
     },
     {
+        "path": "posts/2025/12/15-Pydroid3Reversal.md",
+        "date": "2025-12-15",
+        "title": "Pydroid3简单破解",
+        "categories": [
+            "Reverse"
+        ],
+        "tags": [
+            "simplehookr"
+        ],
+        "cover_image": "",
+        "summary": "使用simpleHookR简单破解Pydroid3"
+    },
+    {
         "path": "posts/2024/11/11-AntinMusicReversal.md",
         "date": "2024-11-11",
         "title": "岸听音乐逆向",
