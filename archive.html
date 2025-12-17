@@ -2,6 +2,7 @@
         <div class="nav-links">
             <a href="index.html" class="nav-item">HOME</a>
             <a href="archive.html" class="nav-item">TIMELINE</a> 
+            <a href="#" class="nav-item visit-count">Total Visits: --</a>
         </div>
     </nav>
 
@@ -12,4 +13,4 @@
         <div id="timeline-container" class="timeline"></div>
     </div>
 
-    <script>async function loadTimeline(){const res=await fetch("data/posts.json");let posts=await res.json();const container=document.getElementById("timeline-container");posts.sort((a,b)=>new Date(b.date)-new Date(a.date));const groups={};posts.forEach(post=>{const year=post.date.split("-")[0];groups[year]||(groups[year]=[]),groups[year].push(post)});Object.keys(groups).sort((a,b)=>b-a).forEach(year=>{const yearLabel=document.createElement("div");yearLabel.className="year-label",yearLabel.innerText=year,container.appendChild(yearLabel),groups[year].forEach(post=>{const item=document.createElement("div");item.className="timeline-item",item.innerHTML=`<div class="timeline-date">${post.date}·${post.categories[0]}</div><a href="post.html?path=${encodeURIComponent(post.path)}"class="timeline-link">${post.title}</a>`,container.appendChild(item)})})}loadTimeline();</script></body></html>
+    <script>async function loadTimeline(){const res=await fetch("data/posts.json");let posts=await res.json();const container=document.getElementById("timeline-container");posts.sort((a,b)=>new Date(b.date)-new Date(a.date));const groups={};posts.forEach(post=>{const year=post.date.split("-")[0];groups[year]||(groups[year]=[]),groups[year].push(post)});Object.keys(groups).sort((a,b)=>b-a).forEach(year=>{const yearLabel=document.createElement("div");yearLabel.className="year-label",yearLabel.innerText=year,container.appendChild(yearLabel),groups[year].forEach(post=>{const item=document.createElement("div");item.className="timeline-item",item.innerHTML=`<div class="timeline-date">${post.date}·${post.categories[0]}</div><a href="post.html?path=${encodeURIComponent(post.path)}"class="timeline-link">${post.title}</a>`,container.appendChild(item)})})}async function fetchTotalVisits(){try{const res=await fetch("https://blog-stats.pages.dev/home-info");const data=await res.json();document.querySelector(".visit-count").textContent=`Total Visits: ${data.total}`;}catch(err){console.error("Failed to fetch total visits:",err);document.querySelector(".visit-count").textContent="Total Visits: Load failed";}}loadTimeline();fetchTotalVisits();</script></body></html>
