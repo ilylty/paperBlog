@@ -1,5 +1,22 @@
 [
     {
+        "path": "posts/2025/12/17-BlogStats.md",
+        "date": "2025-12-17",
+        "title": "博客访问统计功能",
+        "categories": [
+            "建站"
+        ],
+        "tags": [
+            "Cloudflare",
+            "Pages",
+            "KV",
+            "JavaScript",
+            "博客优化"
+        ],
+        "cover_image": "",
+        "summary": "利用 Cloudflare Pages 和 KV 存储，实现日志记录和阅读量统计功能。"
+    },
+    {
         "path": "posts/2025/12/16-Tutorials.md",
         "date": "2025-12-16",
         "title": "Hello world!",
