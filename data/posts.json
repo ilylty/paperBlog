@@ -1,5 +1,22 @@
 [
     {
+        "path": "posts/2025/12/28-PagesCDN.md",
+        "date": "2025-12-28",
+        "title": "Cloudflare Pages 代理加速",
+        "categories": [
+            "网络加速"
+        ],
+        "tags": [
+            "Cloudflare",
+            "Pages",
+            "Clash",
+            "CDN",
+            "规则集"
+        ],
+        "cover_image": "",
+        "summary": "通过 Cloudflare Pages 部署脚本服务，并结合 Clash 与自定义规则集，将视频、图片等高流量资源定向到指定节点."
+    },
+    {
         "path": "posts/2025/12/17-BlogStats.md",
         "date": "2025-12-17",
         "title": "博客访问统计功能",
