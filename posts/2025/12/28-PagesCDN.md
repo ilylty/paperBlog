@@ -463,20 +463,20 @@ https://xxxxxxxxxxxxx.pages.dev
 在 Clash 配置文件的 `proxies` 组中添加：
 
 ```yaml
-- name: "HK-CDN"
-  type: vless
-  server: xxxxxxxxxxxxx.pages.dev
-  port: 443
-  uuid: 12345678-1234-5678-abcd-12345678abcd
-  encryption: none
-  tls: true
-  servername: xxxxxxxxxxxxx.pages.dev
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: "/?ed=2048"
-    headers:
-      Host: xxxxxxxxxxxxx.pages.dev
+  - name: "HK-CDN"
+    type: vless
+    server: xxxxxxxxxxxxx.pages.dev
+    port: 443
+    uuid: 12345678-1234-5678-abcd-12345678abcd
+    encryption: none
+    tls: true
+    servername: xxxxxxxxxxxxx.pages.dev
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: xxxxxxxxxxxxx.pages.dev
 ```
 
 注意：
